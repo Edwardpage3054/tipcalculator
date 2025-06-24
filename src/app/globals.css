@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  @apply p-6 max-w-xl mx-auto space-y-6;
+}
+
+.heading {
+  @apply text-2xl font-bold;
+}
+
+.input-group {
+  @apply space-y-2;
+}
+
+.input {
+  @apply w-full border p-2 rounded;
+}
+
+.section-title {
+  @apply font-semibold mb-2;
+}
+
+.button-group {
+  @apply flex gap-2 flex-wrap;
+}
+
+.person-button {
+  @apply px-4 py-2 rounded-lg border bg-gray-100 cursor-pointer transition-colors duration-300;
+}
+
+.selected-kitchen {
+  @apply bg-blue-500 text-white;
+}
+
+.selected-server {
+  @apply bg-green-500 text-white;
+}
+
+.result-box {
+  @apply bg-gray-100 p-4 rounded-xl space-y-2;
+}
+
+.popup {
+  @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+    bg-white border shadow-xl p-6 rounded-xl z-50 w-[300px];
+}
+
+body {
+  background-color: #f7ddf3;
+}
