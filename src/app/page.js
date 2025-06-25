@@ -96,7 +96,7 @@ export default function TipCalculator() {
         <div className="flex gap-2 items-center">
           $
           <input
-          inputMode='numeric'
+          inputMode='decimal'
           onFocus={(e) => e.target.select()}
             value={cashTip}
             onChange={(e) => setCashTip(e.target.value)}
@@ -109,7 +109,7 @@ export default function TipCalculator() {
         <div className="flex gap-2 items-center">
           $
           <input
-          inputMode='numeric'
+          inputMode='decimal'
           onFocus={(e) => e.target.select()}
             value={cardTip}
             onChange={(e) => setCardTip(e.target.value)}
@@ -127,7 +127,7 @@ export default function TipCalculator() {
               <div key={denom} className="flex justify-between items-center">
                 <label className="mr-10 text-base w-2">${denom}</label>
                 <input
-                inputMode='numeric'
+                inputMode='decimal'
                 onFocus={(e) => e.target.select()}
                   value={coins[denom]}
                   onChange={(e) => setCoins({ ...coins, [denom]: Number(e.target.value) })}
@@ -151,7 +151,7 @@ export default function TipCalculator() {
             <div className="flex items-center justify-between">
               <label className="w-40">이전 카드팁</label>
               <input
-              inputMode='numeric'
+              inputMode='decimal'
               onFocus={(e) => e.target.select()}
                 value={previousCardTip}
                 onChange={(e) => setPreviousCardTip(Number(e.target.value))}
@@ -161,7 +161,7 @@ export default function TipCalculator() {
             <div className="flex items-center justify-between">
               <label className="w-40">현재 카드팁</label>
               <input
-              inputMode='numeric'
+              inputMode='decimal'
               onFocus={(e) => e.target.select()}
                 value={currentCardTip}
                 onChange={(e) => setCurrentCardTip(Number(e.target.value))}
