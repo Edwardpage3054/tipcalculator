@@ -152,6 +152,7 @@ export default function TipCalculator() {
               <label className="w-40">이전 카드팁</label>
               <input
               inputMode='decimal'
+              type='number'
               onFocus={(e) => e.target.select()}
                 value={previousCardTip}
                 onChange={(e) => setPreviousCardTip(Number(e.target.value))}
@@ -162,6 +163,7 @@ export default function TipCalculator() {
               <label className="w-40">현재 카드팁</label>
               <input
               inputMode='decimal'
+              type='number'
               onFocus={(e) => e.target.select()}
                 value={currentCardTip}
                 onChange={(e) => setCurrentCardTip(Number(e.target.value))}
@@ -208,15 +210,12 @@ export default function TipCalculator() {
       </div>
 
       <div className="result-box">
-        <p>
+        {/* <p>
           <span className="text-2xl text-black-500 ml-0">
             {dateNy}
           </span>
         </p>
-        <br/>
-        <p className="text-xl text-black-500"> 현금 팁: <strong>${Number(cashTip).toFixed(2)}</strong></p>
-        <p className="text-xl text-black-500"> 카드 팁: <strong>${Number(cardTip).toFixed(2)}</strong></p>
-        <br/>
+        <br/> */}
         <ul>
           {selectedServer.map(name => (
             <li className="text-2xl text-black-500 m-1" key={name}>{name}: ${serverPerPerson.toFixed(2)}</li>
@@ -225,6 +224,12 @@ export default function TipCalculator() {
             <li className="text-2xl text-black-500 m-1" key={name}>{name}: ${kitchenPerPerson.toFixed(2)}</li>
           ))}
         </ul>
+        <br/>
+        <p className="text-xl text-black-500"> CASH: <strong>${Number(cashTip).toFixed(2)}</strong></p>
+        <p className="text-xl text-black-500"> CARD : <strong>${Number(cardTip).toFixed(2)}</strong></p>
+        <hr/>
+        <p className="text-xl text-black-500">TOTAL: <strong>${totalTip.toFixed(2)}</strong></p>
+        <br/>
       </div>
     </div>
   );
