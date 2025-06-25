@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
     <html>
       <body>
         {children}
-        <p className="ml-40 mt-25">Created By Tony Park</p>
+        <p className="text-left ml-5 mt-25">Created By Tony Park</p>
       </body>
     </html>
   );

@@ -4,7 +4,7 @@ import { useState,useEffect } from 'react';
 import './globals.css';
 
 const kitchenStaff = ['정민', '종혁', '대니', '유승', '나영', '사장님'];
-const serverStaff = ['로라', '민재', '민디', '은영', 'Lee']
+const serverStaff = ['로라', '민재', '민디', '은영', '리']
 ;
 
 export default function TipCalculator() {
@@ -78,19 +78,10 @@ export default function TipCalculator() {
 
   return (
     <div className="container">
-      <h1 className="heading flex items-center justify-between">
-        <span>💰 팁 분배 계산기</span>
-        <span className="text-lg text-black-500 ml-4">
-          📅{date}
-          {/* {new Date().toLocaleDateString('ko-KR', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            weekday: 'short',
-          })} */}
-        </span>
+      <h1 className="heading flex items-center justify-between !mb-0">
+       💰 팁 분배 계산기
       </h1>
-
+      <h2 className=" text-sm text-right !mt-0">📅{date}</h2>
 
       <div className="input-group">
         <label>💵 캐시 팁</label>
@@ -98,6 +89,7 @@ export default function TipCalculator() {
           $
           <input
             type="number"
+            inputMode="numeric"
             value={cashTip}
             onChange={(e) => setCashTip(e.target.value)}
             className="input"
