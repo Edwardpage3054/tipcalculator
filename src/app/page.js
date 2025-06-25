@@ -76,6 +76,14 @@ export default function TipCalculator() {
 
   const coinOrder = ['20','10', '5', '2', '1', '0.25', '0.10', '0.05'];
 
+  const resetCoins = () => {
+  const reset = {};
+  coinOrder.forEach((denom) => {
+    reset[denom] = "";
+  });
+  setCoins(reset);
+};
+
   return (
     <div className="container">
       <h1 className="heading flex items-center justify-between !mb-0">
@@ -89,6 +97,7 @@ export default function TipCalculator() {
           $
           <input
           inputMode='numeric'
+          onFocus={(e) => e.target.select()}
             value={cashTip}
             onChange={(e) => setCashTip(e.target.value)}
             className="input"
@@ -101,6 +110,7 @@ export default function TipCalculator() {
           $
           <input
           inputMode='numeric'
+          onFocus={(e) => e.target.select()}
             value={cardTip}
             onChange={(e) => setCardTip(e.target.value)}
             className="input"
@@ -118,6 +128,7 @@ export default function TipCalculator() {
                 <label className="mr-10 text-base w-2">${denom}</label>
                 <input
                 inputMode='numeric'
+                onFocus={(e) => e.target.select()}
                   value={coins[denom]}
                   onChange={(e) => setCoins({ ...coins, [denom]: Number(e.target.value) })}
                   className="input w-12"
@@ -128,6 +139,7 @@ export default function TipCalculator() {
           <div className="flex gap-2 mt-4">
             <button className="person-button selected-kitchen" onClick={calculateCashTotal}>계산</button>
             <button className="person-button" onClick={() => setShowCashPopup(false)}>닫기</button>
+            <button className="person-button bg-gray-300" onClick={resetCoins}>초기화</button>
           </div>
         </div>
       )}
@@ -140,6 +152,7 @@ export default function TipCalculator() {
               <label className="w-40">이전 카드팁</label>
               <input
               inputMode='numeric'
+              onFocus={(e) => e.target.select()}
                 value={previousCardTip}
                 onChange={(e) => setPreviousCardTip(Number(e.target.value))}
                 className="input w-24"
@@ -149,6 +162,7 @@ export default function TipCalculator() {
               <label className="w-40">현재 카드팁</label>
               <input
               inputMode='numeric'
+              onFocus={(e) => e.target.select()}
                 value={currentCardTip}
                 onChange={(e) => setCurrentCardTip(Number(e.target.value))}
                 className="input w-24"

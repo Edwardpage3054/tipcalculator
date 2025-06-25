@@ -13,7 +13,10 @@ export default function RootLayout({ children }) {
     <html>
       <body>
         {children}
-        <p className="text-left ml-5 mt-25">Created By Tony Park</p>
+<p className="mt-6 flex justify-between px-5 text-sm text-gray-500">
+  <span>Created By Tony Park</span>
+  <span>V 1.0.0</span>
+</p>
       </body>
     </html>
   );
